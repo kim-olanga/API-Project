@@ -12,8 +12,8 @@ export class APIService {
 
 
 
-  getUsers():Observable<User>{
-    return this.http.get<User>(this.BASE_URL + 'users')
+  getUsers():Observable<User[]>{
+    return this.http.get<User[]>(this.BASE_URL + 'Users')
   }
 
   getPosts(){
