@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { User } from './user';
 
 @Injectable({
@@ -12,8 +12,8 @@ export class APIService {
 
 
 
-  getUsers():Observable<User[]>{
-    return this.http.get<User[]>(this.BASE_URL + 'Users')
+  getRepos(username: string):any {
+    return this.http.get('https://api.github.com/users/${username}/repos');
   }
 
   // getPosts(){
