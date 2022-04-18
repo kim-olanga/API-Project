@@ -16,7 +16,7 @@ export class APIService {
     return this.http.get<User[]>(this.BASE_URL + 'Users')
   }
 
-  getPosts(){
-    console.log('Test')
-  }
+  // getPosts(){
+  //   console.log('Test')
+  // }
 }
