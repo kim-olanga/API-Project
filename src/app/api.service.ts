@@ -7,7 +7,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class APIService {
-  BASE_URL = 'https://jsonplaceholder.typicode.com/todos'
+  BASE_URL: string = 'https://jsonplaceholder.typicode.com/todos'
   constructor(private http: HttpClient) { }
 
 
