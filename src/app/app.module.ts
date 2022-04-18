@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { APIService } from './api.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { UsersComponent } from './users/users.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [APIService],
   bootstrap: [AppComponent]
