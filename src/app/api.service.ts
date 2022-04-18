@@ -15,4 +15,8 @@ export class APIService {
   getUsers():Observable<User>{
     return this.http.get<User>(this.BASE_URL + 'users')
   }
+
+  getPosts(){
+    console.log('Test')
+  }
 }
