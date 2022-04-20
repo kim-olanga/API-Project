@@ -22,12 +22,12 @@ export class AppComponent implements OnInit, OnDestroy{
 
   repos = []
   ngOnInit(): void {
-
+    this.getPublicReposWithSubscription()
   }
 
   getPublicReposWithSubscription(){
     this.mySubscription.add(
-      this.apiService.getRepos('Rache1nk').subscribe((user:any)=> console.log)
+      this.apiService.getRepos('Rache1nk').subscribe((user:any)=> console.log(user))
     )
   }
 
