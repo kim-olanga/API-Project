@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { DateCountPipe } from './date-count.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DateCountPipe } from './date-count.pipe';
     UsersComponent,
     UserComponent,
     DateCountPipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
