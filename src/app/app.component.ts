@@ -1,37 +1,37 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { APIService } from './api.service';
+// import { FormControl, ReactiveFormsModule } from '@angular/forms';
+// import { Subscription } from 'rxjs';
+// import { APIService } from './api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent {
   title = 'API-P';
-  mySubscription: Subscription = new Subscription;
+  // mySubscription: Subscription = new Subscription;
 
-  constructor(private apiService: APIService){
+  // constructor(private apiService: APIService){
 
-  }
+  // }
 
-  ngOnDestroy(): void {
-    this.mySubscription.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.mySubscription.unsubscribe();
+  // }
 
-  repos = []
-  ngOnInit(): void {
-    this.getPublicReposWithSubscription()
-  }
+  // repos = []
+  // ngOnInit(): void {
+  //   this.getPublicReposWithSubscription()
+  // }
 
-  getPublicReposWithSubscription(){
-    this.mySubscription.add(
-      this.apiService.getRepos('Rache1nk').subscribe((user:any)=> console.log(user))
-    )
-  }
+  // getPublicReposWithSubscription(){
+  //   this.mySubscription.add(
+  //     this.apiService.getRepos('Rache1nk').subscribe((user:any)=> console.log(user))
+  //   )
+  // }
 
-  name = new FormControl()
+  // name = new FormControl()
 }
 
 // async getPublicReposWithPromise(username:string ){
