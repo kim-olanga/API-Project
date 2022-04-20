@@ -19,9 +19,7 @@ export class DateCountPipe implements PipeTransform {
         'minute': 60,
         'seconds': 1
       }
-    };
-
-    let counter;
+      let counter;
     for (const i in intervals) {
       counter = Math.floor(seconds / intervals[i]);
       if (counter > 0)
@@ -31,6 +29,9 @@ export class DateCountPipe implements PipeTransform {
           return counter + "" + i + "s ago";
         }
     }
+    };
+
+    
 
     return value;
   }
