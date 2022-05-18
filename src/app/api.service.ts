@@ -1,30 +1,42 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from './user';
 import { Repository } from './repository';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class APIService {
-  username: any;
+export class DataserviceService {
+  user:any
+  username= "kim-olanga";
   userRepository: any;
   userProfile: any;
 
+  MYKEY: string = environment.apikey;
+  USERAPIURL = `https://api.github.com/users/${this.username}`
+
   constructor(private http: HttpClient) { 
-    this.userProfile = new User ("","","","",0,0,0,"",new Date)
-    this.userRepository = new Repository ("","",0,"",new Date,0,"")
+    console.log('our service is doing quite well...')
   }
 
 
 
-  profileRequest(username: string):Observable<User>{
-    return this.http.get<User>('https://api.github.com/users/${username}?client_id=${environment.clientId}$client_secrets=${environment.apiKey}');
+  getGithubUserData():Observable<any> {
+    return this.http.get<User>(this.USERAPIURL)
+   
+
+  }
+  getGithubUserRepoData():Observable<any> {
+    return this.http.get<Repository>('https://api.github.com/users/'+this.username+'/repos?acess_token='+this.MYKEY);
   }
 
-  repositoryRequest(username: string):Observable<Array<Repository>> {
-    return this.http.get<Array<Repository>>('https://api.github.com/users/${username}?client_id=${environment.clientId}$client_secrets=${environment.apiKey}');
+  getUserData(username:string){
+    return this.http.get<any>(
+      `https://api.github.com/users/${username}`
+    )
   }
 
 

@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { interval } from 'rxjs';
 
 @Pipe({
   name: 'dateCount'
