@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "API-P"
+  "defaultProject": "API-P",
+  "cli": {
+    "analytics": "3d0d2aaa-f5e7-4896-810c-ce7fd0f94ada"
+  }
 }
